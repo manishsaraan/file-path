@@ -1,10 +1,17 @@
 'use strict';
-module.exports = (input, opts) => {
-	if (typeof input !== 'string') {
-		throw new TypeError(`Expected a string, got ${typeof input}`);
-	}
+const config = require('./package.json');
+const path = require('path');
+var fs = require('fs');
 
-	opts = opts || {};
+module.exports = (key, fileName) => {
+	const { filepath } = config;
+	const basePath = filepath[key];
+	const fullPath = path.join(basePath + fileName + '.js');
 
-	return input + ' & ' + (opts.postfix || 'rainbows');
+	if (fs.existsSync(fullPath)) {
+		return require('./'+fullPath);
+    }
+    else{
+    	throw new Error('File not found.');
+    }
 };

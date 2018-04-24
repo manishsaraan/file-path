@@ -1,13 +1,12 @@
 {
-	"name": "<%= moduleName %>",
-	"version": "0.0.0",
+	"name": "file-path",
+	"version": "0.1.0",
 	"description": "",
 	"license": "MIT",
-	"repository": "<%= githubUsername %>/<%= moduleName %>",
+	"repository": "https://github.com/manishsaraan/file-path.git",
 	"author": {
-		"name": "<%= name %>",
-		"email": "<%= email %>",
-		"url": "<%= website %>"
+		"name": "manishsaraan",
+		"email": "manish021js@gmail.com"
 	},
 	"engines": {
 		"node": ">=4"
@@ -19,9 +18,15 @@
 		"index.js"
 	],
 	"keywords": [
-		""
+		"file",
+		"file-path",
+		"relative-path",
+		"node"
 	],
 	"dependencies": {},
+	"filepath" : {
+		"public" : "dir/public/"
+	},
 	"devDependencies": {
 		"ava": "^0.20.0",
 		"xo": "^0.18.2"
